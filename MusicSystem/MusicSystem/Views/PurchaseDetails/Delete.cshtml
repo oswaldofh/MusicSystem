@@ -1,0 +1,39 @@
+﻿@model MusicSystem.Data.Entities.PurchaseDetail
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="title">Eliminar</h1>
+
+<h3>Estas seguro de eliminar este registro?</h3>
+<div>
+    <h4>PurchaseDetail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AlbumSet.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AlbumSet.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-outline-danger" />
+        <a asp-action="Index" class="btn btn-outline-primary">Regresar</a>
+    </form>
+</div>

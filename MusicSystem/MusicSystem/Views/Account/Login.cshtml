@@ -1,0 +1,57 @@
+﻿@model MusicSystem.Dtos.LoginDto
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div class="row mt-10">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+        <div class="card bg-light mb-3" style="width: 450px; height: 450px; margin-top: 48px;">
+            <h5 class="card-header text-center"><i class="fa-solid fa-envelope text-navy"></i> Iniciar Sesión</h5>
+            <div class="card-body bg-success">
+
+                <form asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="form-group mt-4">
+                        <label asp-for="Username" class="control-label text-white"></label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label asp-for="Password" class="control-label text-white"></label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-4">
+                        <div class="form-check">
+                            <input asp-for="RememberMe" type="checkbox" class="form-check-input" />
+                            <label asp-for="RememberMe" class="form-check-label text-white"></label>
+                        </div>
+                        <span asp-validation-for="RememberMe" class="text-warning"></span>
+                    </div>
+            
+                    <div class="form-group mt-4">
+                        <button input type="submit" value="Login" class="btn btn-outline-light btn-block btn-login"><i class="fa-solid fa-user"></i> Iniciar Sesión</button>
+                        <a asp-action="Register" class="btn btn-outline-warning btn-register"><i class="fa-solid fa-circle-plus "></i> Registrar Nuevo Usuario</a>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer bg-transparent text-center">
+                ¿Has olvidado tu contraseña?<a asp-action="RecoverPassword"> Recuperala</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

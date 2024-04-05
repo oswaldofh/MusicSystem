@@ -1,0 +1,29 @@
+﻿@model MusicSystem.Data.Entities.AlbumSet
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="title">Crear album</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="_Album" />
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Crear" class="btn btn-outline-success" />
+                <a asp-action="Index" class="btn btn-outline-warning">Regresar</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

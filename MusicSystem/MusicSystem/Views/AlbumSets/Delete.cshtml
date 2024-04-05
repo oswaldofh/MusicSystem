@@ -1,0 +1,18 @@
+﻿@model MusicSystem.Data.Entities.AlbumSet
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="title">Eliminar </h1>
+
+<h3>Estas seguro de eliminar este registro?</h3>
+<div>
+    <partial name="_AlbumDetail" />
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-outline-danger" />
+        <a asp-action="Index" class="btn btn-outline-primary">Regresar</a>
+    </form>
+</div>
